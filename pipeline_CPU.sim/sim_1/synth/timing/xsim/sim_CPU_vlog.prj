@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"sim_CPU_time_synth.v" \
+"../../../../../pipeline_CPU.srcs/sim_1/new/sim_CPU.v" \
+
+# Do not sort compile order
+nosort

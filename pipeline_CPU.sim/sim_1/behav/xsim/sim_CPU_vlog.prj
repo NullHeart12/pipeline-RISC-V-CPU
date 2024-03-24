@@ -1,0 +1,28 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../pipeline_CPU.srcs/sources_1/new/ALU.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/CPU.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/CU.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/DataMem.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/EX_MEM.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/ID_EX.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/IF_ID.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/InsDecoder.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/InsMem.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/MEM_WB.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/MUX2to1.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/MUX2to1RS.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/PC.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/PCALU.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/RS.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/display.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/divider.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/expand_truncation_imm.v" \
+"../../../../pipeline_CPU.srcs/sources_1/new/registers.v" \
+"../../../../pipeline_CPU.srcs/sim_1/new/sim_CPU.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

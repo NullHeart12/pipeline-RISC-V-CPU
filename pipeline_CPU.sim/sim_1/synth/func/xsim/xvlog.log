@@ -1,0 +1,25 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/code/pipeline_CPU/pipeline_CPU/pipeline_CPU.sim/sim_1/synth/func/xsim/sim_CPU_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module CU
+INFO: [VRFC 10-311] analyzing module DataMem
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-311] analyzing module InsDecoder
+INFO: [VRFC 10-311] analyzing module InsMem
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-311] analyzing module MUX2to1
+INFO: [VRFC 10-311] analyzing module MUX2to1RS
+INFO: [VRFC 10-311] analyzing module MUX2to1RS__1
+INFO: [VRFC 10-311] analyzing module MUX2to1RS__2
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-311] analyzing module PCALU
+INFO: [VRFC 10-311] analyzing module RS
+INFO: [VRFC 10-311] analyzing module display
+INFO: [VRFC 10-311] analyzing module divider
+INFO: [VRFC 10-311] analyzing module expand_truncation_imm
+INFO: [VRFC 10-311] analyzing module registers
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/code/pipeline_CPU/pipeline_CPU/pipeline_CPU.srcs/sim_1/new/sim_CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_CPU

@@ -1,0 +1,976 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Mon Dec 18 16:20:59 2023
+| Host         : DESKTOP-JNG5QL6 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file CPU_timing_summary_routed.rpt -pb CPU_timing_summary_routed.pb -rpx CPU_timing_summary_routed.rpx -warn_on_violation
+| Design       : CPU
+| Device       : 7a35t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                     Violations  
+---------  ----------------  ------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell     1000        
+TIMING-20  Warning           Non-clocked latch               1000        
+TIMING-23  Warning           Combinational loop found        147         
+LATCH-1    Advisory          Existing latches in the design  1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (32386)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (8638)
+5. checking no_input_delay (1)
+6. checking no_output_delay (23)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (166)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (2050)
+
+1. checking no_clock (32386)
+----------------------------
+ There are 66 register/latch pins with no clock driven by root clock pin: clk_dis (HIGH)
+
+ There are 13 register/latch pins with no clock driven by root clock pin: rst (HIGH)
+
+ There are 10 register/latch pins with no clock driven by root clock pin: RS_/rs1_stall_reg/Q (HIGH)
+
+ There are 10 register/latch pins with no clock driven by root clock pin: RS_/rs2_stall_reg/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: alu/rd_out_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: alu/rd_out_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: alu/rd_out_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: alu/rd_out_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: alu/rd_out_reg[4]/Q (HIGH)
+
+ There are 1542 register/latch pins with no clock driven by root clock pin: div1/clk_reg/Q (HIGH)
+
+ There are 15 register/latch pins with no clock driven by root clock pin: div2/clk_reg/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_operator_reg[0]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_operator_reg[1]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_operator_reg[2]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_operator_reg[3]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_optype_reg[0]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_optype_reg[1]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/out_optype_reg[2]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[0]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[1]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[2]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[3]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[4]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[5]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[6]/Q (HIGH)
+
+ There are 2048 register/latch pins with no clock driven by root clock pin: ex_mem/wmem_addr_reg[7]/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (8638)
+---------------------------------------------------
+ There are 8638 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (1)
+------------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (23)
+--------------------------------
+ There are 23 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (166)
+-----------------------
+ There are 166 combinational loops in the design. (HIGH)
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (2050)
+-------------------------------
+ There are 2050 combinational latch loops in the design through latch input (HIGH)
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                 8663          inf        0.000                      0                 8663           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay          8663 Endpoints
+Min Delay          8663 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[36][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        49.526ns  (logic 3.453ns (6.972%)  route 46.073ns (93.028%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        17.423    48.613    datamem/rs2[27]
+    SLICE_X14Y46         LUT5 (Prop_lut5_I4_O)        0.326    48.939 r  datamem/mem_reg[36][3]_i_1/O
+                         net (fo=1, routed)           0.587    49.526    datamem/mem_reg[36][3]_i_1_n_0
+    SLICE_X14Y46         LDCE                                         r  datamem/mem_reg[36][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[20][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.896ns  (logic 3.453ns (7.062%)  route 45.443ns (92.938%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        17.381    48.570    datamem/rs2[27]
+    SLICE_X8Y25          LUT5 (Prop_lut5_I4_O)        0.326    48.896 r  datamem/mem_reg[20][3]_i_1/O
+                         net (fo=1, routed)           0.000    48.896    datamem/mem_reg[20][3]_i_1_n_0
+    SLICE_X8Y25          LDPE                                         r  datamem/mem_reg[20][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[45][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.817ns  (logic 3.453ns (7.073%)  route 45.364ns (92.927%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.961    48.151    datamem/rs2[27]
+    SLICE_X11Y46         LUT5 (Prop_lut5_I4_O)        0.326    48.477 r  datamem/mem_reg[45][3]_i_1/O
+                         net (fo=1, routed)           0.340    48.817    datamem/mem_reg[45][3]_i_1_n_0
+    SLICE_X11Y46         LDCE                                         r  datamem/mem_reg[45][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[35][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.764ns  (logic 3.453ns (7.081%)  route 45.311ns (92.919%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.680    47.870    datamem/rs2[27]
+    SLICE_X14Y43         LUT5 (Prop_lut5_I4_O)        0.326    48.196 r  datamem/mem_reg[35][3]_i_1/O
+                         net (fo=1, routed)           0.568    48.764    datamem/mem_reg[35][3]_i_1_n_0
+    SLICE_X14Y43         LDCE                                         r  datamem/mem_reg[35][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[36][1]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.737ns  (logic 3.613ns (7.413%)  route 45.124ns (92.587%))
+  Logic Levels:           19  (FDRE=1 LUT3=2 LUT4=1 LUT5=4 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.152    28.744    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X42Y51         LUT6 (Prop_lut6_I2_O)        0.124    28.868 r  RS_/RS[2]_inferred_i_29/O
+                         net (fo=4, routed)           0.821    29.689    RS_/RS[2][9]
+    SLICE_X44Y51         LUT6 (Prop_lut6_I5_O)        0.124    29.813 r  RS_/rs2_imm_mem[9]_INST_0_i_1/O
+                         net (fo=1, routed)           0.433    30.246    RS_/rs2_imm_mem[9]_INST_0_i_1_n_0
+    SLICE_X44Y51         LUT3 (Prop_lut3_I2_O)        0.124    30.370 r  RS_/rs2_imm_mem[9]_INST_0/O
+                         net (fo=1, routed)           0.641    31.011    mux3/value[9]
+    SLICE_X45Y50         LUT3 (Prop_lut3_I0_O)        0.153    31.164 r  mux3/out_rs[9]_INST_0/O
+                         net (fo=255, routed)        15.861    47.025    datamem/rs2[9]
+    SLICE_X13Y46         LUT5 (Prop_lut5_I4_O)        0.327    47.352 r  datamem/mem_reg[36][1]_i_2/O
+                         net (fo=1, routed)           0.938    48.290    datamem/mem_reg[36][1]_i_2_n_0
+    SLICE_X14Y46         LUT5 (Prop_lut5_I0_O)        0.124    48.414 r  datamem/mem_reg[36][1]_i_1/O
+                         net (fo=1, routed)           0.323    48.737    datamem/mem_reg[36][1]_i_1_n_0
+    SLICE_X13Y46         LDCE                                         r  datamem/mem_reg[36][1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[43][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.676ns  (logic 3.453ns (7.094%)  route 45.223ns (92.906%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.781    47.971    datamem/rs2[27]
+    SLICE_X12Y46         LUT5 (Prop_lut5_I4_O)        0.326    48.297 r  datamem/mem_reg[43][3]_i_1/O
+                         net (fo=1, routed)           0.379    48.676    datamem/mem_reg[43][3]_i_1_n_0
+    SLICE_X12Y46         LDCE                                         r  datamem/mem_reg[43][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[47][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.515ns  (logic 3.453ns (7.117%)  route 45.062ns (92.883%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.621    47.810    datamem/rs2[27]
+    SLICE_X12Y43         LUT5 (Prop_lut5_I4_O)        0.326    48.136 r  datamem/mem_reg[47][3]_i_1/O
+                         net (fo=1, routed)           0.379    48.515    datamem/mem_reg[47][3]_i_1_n_0
+    SLICE_X12Y43         LDCE                                         r  datamem/mem_reg[47][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[39][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.372ns  (logic 3.453ns (7.138%)  route 44.919ns (92.861%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.269    47.458    datamem/rs2[27]
+    SLICE_X6Y44          LUT5 (Prop_lut5_I4_O)        0.326    47.784 r  datamem/mem_reg[39][3]_i_1/O
+                         net (fo=1, routed)           0.587    48.372    datamem/mem_reg[39][3]_i_1_n_0
+    SLICE_X6Y44          LDCE                                         r  datamem/mem_reg[39][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[46][3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.364ns  (logic 3.453ns (7.140%)  route 44.911ns (92.860%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          2.662    29.254    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X47Y61         LUT6 (Prop_lut6_I2_O)        0.124    29.378 r  RS_/RS[2]_inferred_i_11/O
+                         net (fo=4, routed)           0.572    29.950    RS_/RS[2][27]
+    SLICE_X47Y62         LUT6 (Prop_lut6_I5_O)        0.124    30.074 r  RS_/rs2_imm_mem[27]_INST_0_i_1/O
+                         net (fo=1, routed)           0.404    30.478    RS_/rs2_imm_mem[27]_INST_0_i_1_n_0
+    SLICE_X47Y60         LUT3 (Prop_lut3_I2_O)        0.124    30.602 r  RS_/rs2_imm_mem[27]_INST_0/O
+                         net (fo=1, routed)           0.469    31.072    mux3/value[27]
+    SLICE_X47Y60         LUT3 (Prop_lut3_I0_O)        0.118    31.190 r  mux3/out_rs[27]_INST_0/O
+                         net (fo=253, routed)        16.469    47.658    datamem/rs2[27]
+    SLICE_X13Y44         LUT5 (Prop_lut5_I4_O)        0.326    47.984 r  datamem/mem_reg[46][3]_i_1/O
+                         net (fo=1, routed)           0.379    48.364    datamem/mem_reg[46][3]_i_1_n_0
+    SLICE_X13Y44         LDCE                                         r  datamem/mem_reg[46][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/rmem_addr_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            datamem/mem_reg[39][0]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        48.277ns  (logic 3.257ns (6.746%)  route 45.020ns (93.254%))
+  Logic Levels:           18  (FDRE=1 LUT3=2 LUT4=1 LUT5=3 LUT6=8 MUXF7=2 MUXF8=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y46         FDRE                         0.000     0.000 r  ex_mem/rmem_addr_reg[0]/C
+    SLICE_X41Y46         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  ex_mem/rmem_addr_reg[0]/Q
+                         net (fo=2049, routed)       15.206    15.625    datamem/raddr[0]
+    SLICE_X6Y13          LUT6 (Prop_lut6_I4_O)        0.299    15.924 f  datamem/rdata[12]_INST_0_i_68/O
+                         net (fo=1, routed)           0.000    15.924    datamem/rdata[12]_INST_0_i_68_n_0
+    SLICE_X6Y13          MUXF7 (Prop_muxf7_I1_O)      0.247    16.171 f  datamem/rdata[12]_INST_0_i_29/O
+                         net (fo=1, routed)           0.000    16.171    datamem/rdata[12]_INST_0_i_29_n_0
+    SLICE_X6Y13          MUXF8 (Prop_muxf8_I0_O)      0.098    16.269 f  datamem/rdata[12]_INST_0_i_10/O
+                         net (fo=1, routed)           1.797    18.066    datamem/rdata[12]_INST_0_i_10_n_0
+    SLICE_X44Y14         LUT6 (Prop_lut6_I5_O)        0.319    18.385 f  datamem/rdata[12]_INST_0_i_3/O
+                         net (fo=1, routed)           0.000    18.385    datamem/rdata[12]_INST_0_i_3_n_0
+    SLICE_X44Y14         MUXF7 (Prop_muxf7_I0_O)      0.212    18.597 f  datamem/rdata[12]_INST_0_i_1/O
+                         net (fo=1, routed)           1.824    20.422    datamem/rdata[12]_INST_0_i_1_n_0
+    SLICE_X44Y35         LUT5 (Prop_lut5_I0_O)        0.299    20.721 f  datamem/rdata[12]_INST_0/O
+                         net (fo=6, routed)           1.154    21.875    RS_/data_mem[12]
+    SLICE_X44Y47         LUT4 (Prop_lut4_I1_O)        0.124    21.999 f  RS_/RS[1]_inferred_i_64/O
+                         net (fo=1, routed)           0.444    22.443    RS_/RS[1]_inferred_i_64_n_0
+    SLICE_X44Y47         LUT5 (Prop_lut5_I4_O)        0.124    22.567 r  RS_/RS[1]_inferred_i_49/O
+                         net (fo=4, routed)           1.078    23.645    RS_/RS[1]_inferred_i_49_n_0
+    SLICE_X50Y47         LUT6 (Prop_lut6_I1_O)        0.124    23.769 f  RS_/RS[2]_inferred_i_39/O
+                         net (fo=33, routed)          0.949    24.718    RS_/RS[2]_inferred_i_39_n_0
+    SLICE_X53Y49         LUT6 (Prop_lut6_I1_O)        0.124    24.842 f  RS_/RS[2]_inferred_i_6/O
+                         net (fo=8, routed)           0.332    25.174    RS_/RS[2][32]
+    SLICE_X53Y48         LUT6 (Prop_lut6_I0_O)        0.124    25.298 f  RS_/RS[2]_inferred_i_43/O
+                         net (fo=1, routed)           1.170    26.468    RS_/RS[2]_inferred_i_43_n_0
+    SLICE_X50Y51         LUT6 (Prop_lut6_I5_O)        0.124    26.592 r  RS_/RS[2]_inferred_i_40/O
+                         net (fo=33, routed)          1.905    28.498    RS_/RS[2]_inferred_i_40_n_0
+    SLICE_X53Y60         LUT6 (Prop_lut6_I2_O)        0.124    28.622 r  RS_/RS[2]_inferred_i_14/O
+                         net (fo=4, routed)           0.681    29.302    RS_/RS[2][24]
+    SLICE_X52Y60         LUT6 (Prop_lut6_I5_O)        0.124    29.426 r  RS_/rs2_imm_mem[24]_INST_0_i_1/O
+                         net (fo=1, routed)           0.658    30.084    RS_/rs2_imm_mem[24]_INST_0_i_1_n_0
+    SLICE_X52Y59         LUT3 (Prop_lut3_I2_O)        0.124    30.208 r  RS_/rs2_imm_mem[24]_INST_0/O
+                         net (fo=1, routed)           0.633    30.841    mux3/value[24]
+    SLICE_X51Y59         LUT3 (Prop_lut3_I0_O)        0.124    30.965 r  mux3/out_rs[24]_INST_0/O
+                         net (fo=253, routed)        16.601    47.566    datamem/rs2[24]
+    SLICE_X8Y43          LUT5 (Prop_lut5_I4_O)        0.124    47.690 r  datamem/mem_reg[39][0]_i_1/O
+                         net (fo=1, routed)           0.587    48.277    datamem/mem_reg[39][0]_i_1_n_0
+    SLICE_X8Y43          LDCE                                         r  datamem/mem_reg[39][0]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 ex_mem/out_result_reg[31]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            mem_wb/out_data_reg[31]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.240ns  (logic 0.186ns (77.515%)  route 0.054ns (22.485%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y62         FDRE                         0.000     0.000 r  ex_mem/out_result_reg[31]/C
+    SLICE_X44Y62         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  ex_mem/out_result_reg[31]/Q
+                         net (fo=1, routed)           0.054     0.195    mem_wb/alu_result[31]
+    SLICE_X45Y62         LUT6 (Prop_lut6_I5_O)        0.045     0.240 r  mem_wb/out_data[31]_i_1/O
+                         net (fo=1, routed)           0.000     0.240    mem_wb/temp_data[31]
+    SLICE_X45Y62         FDRE                                         r  mem_wb/out_data_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/out_result_reg[25]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            mem_wb/out_data_reg[25]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.273ns  (logic 0.186ns (68.106%)  route 0.087ns (31.894%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y59         FDRE                         0.000     0.000 r  ex_mem/out_result_reg[25]/C
+    SLICE_X55Y59         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  ex_mem/out_result_reg[25]/Q
+                         net (fo=1, routed)           0.087     0.228    mem_wb/alu_result[25]
+    SLICE_X54Y59         LUT6 (Prop_lut6_I5_O)        0.045     0.273 r  mem_wb/out_data[25]_i_1/O
+                         net (fo=1, routed)           0.000     0.273    mem_wb/temp_data[25]
+    SLICE_X54Y59         FDRE                                         r  mem_wb/out_data_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/out_rd_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            temp_rd_exe_mem_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.289ns  (logic 0.164ns (56.720%)  route 0.125ns (43.280%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y56         FDRE                         0.000     0.000 r  ex_mem/out_rd_reg[1]/C
+    SLICE_X52Y56         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  ex_mem/out_rd_reg[1]/Q
+                         net (fo=2, routed)           0.125     0.289    EX_MEM_rd[1]
+    SLICE_X53Y56         FDRE                                         r  temp_rd_exe_mem_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/out_result_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            mem_wb/out_data_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.291ns  (logic 0.186ns (63.880%)  route 0.105ns (36.120%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y50         FDRE                         0.000     0.000 r  ex_mem/out_result_reg[7]/C
+    SLICE_X49Y50         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  ex_mem/out_result_reg[7]/Q
+                         net (fo=1, routed)           0.105     0.246    mem_wb/alu_result[7]
+    SLICE_X49Y51         LUT6 (Prop_lut6_I5_O)        0.045     0.291 r  mem_wb/out_data[7]_i_1/O
+                         net (fo=1, routed)           0.000     0.291    mem_wb/temp_data[7]
+    SLICE_X49Y51         FDRE                                         r  mem_wb/out_data_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ex_mem/out_rd_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            temp_rd_exe_mem_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.307ns  (logic 0.141ns (45.965%)  route 0.166ns (54.035%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y57         FDRE                         0.000     0.000 r  ex_mem/out_rd_reg[2]/C
+    SLICE_X51Y57         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  ex_mem/out_rd_reg[2]/Q
+                         net (fo=2, routed)           0.166     0.307    EX_MEM_rd[2]
+    SLICE_X53Y56         FDRE                                         r  temp_rd_exe_mem_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 regs/regs_reg[19][14]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            regs/regs_reg[19][14]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.308ns  (logic 0.191ns (61.951%)  route 0.117ns (38.049%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y68         FDCE                         0.000     0.000 r  regs/regs_reg[19][14]/C
+    SLICE_X59Y68         FDCE (Prop_fdce_C_Q)         0.146     0.146 r  regs/regs_reg[19][14]/Q
+                         net (fo=3, routed)           0.117     0.263    regs/regs[19]__0[14]
+    SLICE_X59Y68         LUT6 (Prop_lut6_I5_O)        0.045     0.308 r  regs/regs[19][14]_i_1/O
+                         net (fo=1, routed)           0.000     0.308    regs/regs_reg[19][14]
+    SLICE_X59Y68         FDCE                                         r  regs/regs_reg[19][14]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 regs/regs_reg[13][7]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            regs/regs_reg[13][7]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.308ns  (logic 0.191ns (61.939%)  route 0.117ns (38.061%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y65         FDCE                         0.000     0.000 r  regs/regs_reg[13][7]/C
+    SLICE_X57Y65         FDCE (Prop_fdce_C_Q)         0.146     0.146 r  regs/regs_reg[13][7]/Q
+                         net (fo=3, routed)           0.117     0.263    regs/regs[13]__0[7]
+    SLICE_X57Y65         LUT6 (Prop_lut6_I5_O)        0.045     0.308 r  regs/regs[13][7]_i_1/O
+                         net (fo=1, routed)           0.000     0.308    regs/regs_reg[13][7]
+    SLICE_X57Y65         FDCE                                         r  regs/regs_reg[13][7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 mem_wb/out_data_reg[23]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            display_data_reg[23]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.309ns  (logic 0.141ns (45.704%)  route 0.168ns (54.296%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y63         FDRE                         0.000     0.000 r  mem_wb/out_data_reg[23]/C
+    SLICE_X45Y63         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  mem_wb/out_data_reg[23]/Q
+                         net (fo=33, routed)          0.168     0.309    mem_wb_data[23]
+    SLICE_X47Y61         FDCE                                         r  display_data_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 mem_wb/out_data_reg[24]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            display_data_reg[24]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.309ns  (logic 0.141ns (45.683%)  route 0.168ns (54.317%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y61         FDRE                         0.000     0.000 r  mem_wb/out_data_reg[24]/C
+    SLICE_X53Y61         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  mem_wb/out_data_reg[24]/Q
+                         net (fo=33, routed)          0.168     0.309    mem_wb_data[24]
+    SLICE_X50Y61         FDCE                                         r  display_data_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 regs/regs_reg[9][18]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            regs/regs_reg[9][18]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.309ns  (logic 0.191ns (61.803%)  route 0.118ns (38.197%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y72         FDCE                         0.000     0.000 r  regs/regs_reg[9][18]/C
+    SLICE_X33Y72         FDCE (Prop_fdce_C_Q)         0.146     0.146 r  regs/regs_reg[9][18]/Q
+                         net (fo=3, routed)           0.118     0.264    regs/regs[9]__0[18]
+    SLICE_X33Y72         LUT6 (Prop_lut6_I5_O)        0.045     0.309 r  regs/regs[9][18]_i_1/O
+                         net (fo=1, routed)           0.000     0.309    regs/regs_reg[9][18]
+    SLICE_X33Y72         FDCE                                         r  regs/regs_reg[9][18]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
